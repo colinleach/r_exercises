@@ -49,6 +49,12 @@ test_that("X is only valid as a check digit", {
 })
 
 test_that("valid isbn without separating dashes", {
+  isbn <- "3598215088"
+  result <- TRUE
+  expect_equal(is_valid(isbn), result)
+})
+
+test_that("isbn without separating dashes and X as check digit", {
   isbn <- "359821507X"
   result <- TRUE
   expect_equal(is_valid(isbn), result)
